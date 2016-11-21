@@ -16,8 +16,8 @@ The original danmu was using python package socket to listen to chat messages in
 ## why multiprocessing
 However, during the testing, I found out that each os has its own limit of how many threads you can start at a time. Mine would stop when threads >= 900. Therefore, we must use different processes to hold multithreading.
 
-## why boht multithreading and multiprocessing
-During the time I google for advices, I rarely see anyone using both at a time. However, my testing shows that if I built multiprocessing directly. Each process would cost 7 mb for the memory because multiprocessing does not share memory while there is a great overhead for each process, which makes memory the bottleneck!
+## why both multithreading and multiprocessing
+During the time I googled for advices, I have rarely seen anyone using both at a time. However, my testing shows that if I built multiprocessing directly. Each process would cost roughly 7 mb for the memory since each process does not share memory causing great overhead, which makes memory installed the bottleneck!
 
 ## Queue and MongoDB
 I used `multiprocessing.Queue` to receive messages among different threads and processes. My initial plan was using  `Queue.Queue` in each process, then write another process to specifically to run `multiprocessing.Queue.get(thread_message)` among each different process. However, it turns out that `multiprocessing.Queue` can easily fetch all messages among different threads and processes.
