@@ -1,10 +1,12 @@
 # multithreading+multiprocessing socket listener
 ## start
-`cd danmu_listener`
-`virtualenv env`
-`source env/bin/activate`
-`pip install -r requirement.txt`
-`python danmu_new_1.py`
+```
+cd danmu_listener
+virtualenv env
+source env/bin/activate
+pip install -r requirement.txt
+python danmu_new_1.py
+```
 
 This is an extension built on [pip danmu](https://github.com/littlecodersh/danmu/tree/master/danmu)
 
@@ -31,4 +33,4 @@ Right now, it works alright by using `insert_one` and `multiprocessing.Queue` to
 ## use proxy to fake IP addresses
 The website I am crawling has limit for each IP address, in order to overcome that I would need to buy more proxies....
 
-## please support me! 
+## please support me!
