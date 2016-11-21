@@ -82,7 +82,7 @@ if __name__ == "__main__":
 	process_queue = Process_queue()
 	start_process(dmcs)
 	# connect to MongoDB
-	DBclient = MongoClient('mongodb://bonanyuan:ybn1992615@ds159527.mlab.com:59527/danmu')
+	DBclient = MongoClient()
 	danmu_db = DBclient['danmu']
 	danmu_info = danmu_db['test']
 	while True:
